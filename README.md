@@ -1,89 +1,52 @@
-# CIFAR-10 Image Classification with Convolutional Neural Networks (CNN)
+# 🌼 CNN Flower Image Classification
 
-This project demonstrates image classification on the CIFAR-10 dataset using a Convolutional Neural Network (CNN) built with TensorFlow and Keras. It includes model training, evaluation, and visualization of performance metrics.
+This repository contains Jupyter Notebooks demonstrating the use of Convolutional Neural Networks (CNNs) for flower image classification, covering essential techniques like data augmentation and transfer learning using TensorFlow/Keras.
 
----
+## 📁 Repository Contents
 
-## 📦 Dataset
+### 1. `cnn_flower_image_classification_data_augmentations.ipynb`
+- Implements a CNN from scratch for flower image classification.
+- Applies various **data augmentation techniques** such as rotation, zooming, flipping, and brightness variation to enhance generalization.
+- Visualizes augmented images and training performance.
 
-The [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html) consists of:
-- 60,000 32×32 color images
-- 10 classes: `airplane`, `automobile`, `bird`, `cat`, `deer`, `dog`, `frog`, `horse`, `ship`, `truck`
-- Split into 50,000 training images and 10,000 test images
+### 2. `cnn_transfer_learning.ipynb`
+- Demonstrates **transfer learning** using a pre-trained model (like VGG16, InceptionV3, or MobileNet).
+- Fine-tunes the model for the flower classification task.
+- Shows improved performance with fewer training epochs.
 
----
+### 3. (Duplicate or updated version of notebook 2)
 
-## 🧰 Technologies & Libraries Used
+## 🧠 Techniques Used
+- CNN architecture design and training
+- Data preprocessing and augmentation with `ImageDataGenerator`
+- Transfer learning with pre-trained models from `keras.applications`
+- Model evaluation with training/validation accuracy and loss plots
 
-- [TensorFlow](https://www.tensorflow.org/)
-- [Keras](https://keras.io/)
-- [NumPy](https://numpy.org/)
-- [Pandas](https://pandas.pydata.org/)
-- [Matplotlib](https://matplotlib.org/)
-- [Seaborn](https://seaborn.pydata.org/)
-
----
-
-## 🧪 Model Workflow
-
-1. **Data Loading**: CIFAR-10 dataset loaded using `tensorflow.keras.datasets`
-2. **Preprocessing**:
-   - Normalizing image data
-   - Reshaping label arrays
-3. **Model Architecture**:
-   - Stacked convolutional layers
-   - MaxPooling layers
-   - Fully connected Dense layers
-4. **Training**:
-   - Model compiled using `sparse_categorical_crossentropy` loss
-   - Trained and validated using accuracy metrics
-5. **Evaluation**:
-   - Confusion matrix
-   - Accuracy plots
-   - Sample predictions with true vs predicted labels
-
----
-
-## 📊 Results
-
-The notebook includes:
-- Visual comparison of sample images
-- Training vs validation accuracy/loss graphs
-- Confusion matrix to evaluate classification performance
-
----
+## 📊 Dataset
+The models are trained on a flower classification dataset (e.g., Oxford 102 Flowers or a subset), which is loaded from a local or cloud-based directory. Instructions for dataset usage can be added depending on your dataset location and format.
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-Install the necessary Python packages:
+### Requirements
+- Python 3.7+
+- TensorFlow 2.x
+- NumPy, Matplotlib, Jupyter
 
 ```bash
-pip install tensorflow numpy pandas matplotlib seaborn
+pip install tensorflow matplotlib numpy
 ```
 
-### Running the Notebook
-
-Clone this repository and run the notebook:
-
+### Run Notebooks
+Launch Jupyter Notebook and open the files:
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
 jupyter notebook
 ```
 
-Open the `.ipynb` file and run the cells.
+## 📈 Results
+- The data-augmented CNN achieves reasonable performance but may overfit on small datasets.
+- Transfer learning significantly boosts accuracy and reduces training time.
 
----
-
-## 📁 File Structure
-
-```
-.
-├── cifar10_cnn_classification.ipynb  # Jupyter Notebook with all code and visualizations
-└── README.md                         # Project documentation
-```
-
----
+## 📚 References
+- [TensorFlow Keras Applications](https://www.tensorflow.org/api_docs/python/tf/keras/applications)
+- [Oxford 102 Flower Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/)
 
